@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@notionhq/client": "^2.2.11"
+    "@notionhq/client": "^2.2.11",
+    "firebase": "^10.3.0"
   }
 }

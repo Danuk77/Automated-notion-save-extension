@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New chrome extension</title>
+    <link href='./Bootstrap.css' rel="stylesheet">
+    <link href='./styles.css' rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Heading row -->
+        <div id="Header" class="row">
+            <div class="col">
+                <img id="Logo" src="Assets/Logo.png">
+            </div>
+            <div class="col d-flex justify-content-end">
+                <img id="Settings" src="Assets/configure.png">
+            </div>
+        </div>
+
+        <div id="Separator" class="row"></div>
+
+        <!-- The content to be saved -->
+        <div class="row">
+            <div id="URL" class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="URL" aria-label="URL" aria-describedby="addon-wrapping">
+            </div>
+
+            <div id="Title" class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="addon-wrapping">
+            </div>
+
+            <div id="Description" class="input-group">
+                <textarea class="form-control" aria-label="With textarea" rows="5" cols="40" placeholder="Description"></textarea>
+            </div>
+
+            <div class="text-center">
+                <img id="Submit" src="Assets/Save.png">
+            </div>
+        </div>
+
+    </div>
+    <script src="createNewEntry.js"></script>
+    <script src="Bootstrap.js"></script>
+</body>
+</html>

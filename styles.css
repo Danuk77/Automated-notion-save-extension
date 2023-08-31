@@ -1,0 +1,63 @@
+body{
+    background-color: #DCF5ED;
+}
+
+#Logo{
+    width: 80%;
+}
+
+#Settings{
+    width: 15%;
+}
+
+#Send{
+    height: 40%;
+}
+
+#Header{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#Separator{
+    background-color: #8D7F7F;
+    height: 1px;
+    width: 100%;
+    margin: 0;
+    margin-bottom:3%;
+}
+
+#URL input,
+#Title input,
+#Description textarea {
+    background-color: #D8EDE7;
+    border-radius: 0;
+    border: 1px solid black;
+}
+#Description textarea{
+    background-color: #F4F8F6;
+}
+
+#URL{
+    padding-bottom: 3%;
+    border-radius: 0;
+    width: 350px;
+}
+
+#Title{
+    padding-bottom: 3%;
+}
+
+#Description{
+    padding-bottom: 3%;
+}
+
+#Submit{
+    width: 60%;
+    margin-bottom: 10px;
+    transition: transform .3s;
+}
+
+#Submit:hover{
+    transform:scale(1.1);
+}
