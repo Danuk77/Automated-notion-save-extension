@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New chrome extension</title>
+    <link href='./Bootstrap.css' rel="stylesheet">
+    <link href='./configuration.css' rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Heading row -->
+        <div id="Header" class="row">
+            <div class="col">
+                <img id="Logo" src="Assets/Configuration.png">
+            </div>
+        </div>
+
+        <!-- The content to be saved -->
+        <div class="row">
+            <label class="col-sm-2 col-form-label fw-bold">Integration key</label>
+            <div id="Integration" class="input-group flex-nowrap">
+                <input id="IntegrationIn" type="text" class="form-control" placeholder="Integration key" aria-label="URL" aria-describedby="addon-wrapping">
+            </div>
+
+            <label class="col-sm-2 col-form-label fw-bold">Database information</label>
+            <div id="Database" class="input-group flex-nowrap">
+                <input id="DatabaseIn" type="text" class="form-control" placeholder="DatabaseID" aria-label="URL" aria-describedby="addon-wrapping">
+            </div>
+
+            <div class="text-center">
+                <img id="Submit" src="Assets/Save.png">
+            </div>
+        </div>
+
+    </div>
+    <script src="Bootstrap.js"></script>
+    <script src="configuration.js"></script>
+</body>
+</html>

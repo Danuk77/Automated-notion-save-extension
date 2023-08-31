@@ -1,0 +1,30 @@
+#Header{
+    padding-top: 4%;
+    padding-bottom: 4%;
+    height: 10%;
+}
+
+.container{
+    background-color: #DCF5ED;
+}
+
+#Submit{
+    padding-bottom: 5%;
+    padding-top: 5%;
+    width: 30%;
+    transition: transform .1s;
+}
+
+#Submit:hover{
+    transform:scale(1.02);
+}
+
+#Submit.clicked{
+    transform:scale(1.04);
+}
+
+#Integration input,
+#Database input{
+    border-radius: 0;
+    border: 1px solid black;
+}

@@ -9,6 +9,23 @@ const description = document.getElementById("Descriptionin");
 let urlValue = null;
 let titleValue = null;
 let icon = null;
+let integrationKey = null;
+let databaseID = null;
+
+// TODO - add functionality when it doesnt exist
+chrome.storage.sync.get(["integrationKey"]).then((result) => {
+    if(result.integrationKey){
+        integrationKey = result.integrationKey;
+    }
+});
+
+// TODO - add functionality when it doesnt exist
+chrome.storage.sync.get(["databaseID"]).then((result) => {
+    if(result.integrationKey){
+        databaseID = result.integrationKey;
+    }
+});
+
 
 // Update the variables depending on what page the user is in
 try{
@@ -71,10 +88,16 @@ submit.addEventListener("click", function() {
 })
 
 // Settings button
-settings.addEventListener("click", function() {
+settings.addEventListener("click", async function() {
     this.classList.add("clicked");
 
     setTimeout(() => {
         this.classList.remove("clicked");
     }, 50);
+
+    if (chrome.runtime.openOptionsPage) {
+        chrome.runtime.openOptionsPage();
+    } else {
+        window.open(chrome.runtime.getURL('configuration.html'));
+    }
 })

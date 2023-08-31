@@ -39,7 +39,6 @@ body{
 #URL input,
 #Title input,
 #Description textarea {
-    background-color: #D8EDE7;
     border-radius: 0;
     border: 1px solid black;
 }

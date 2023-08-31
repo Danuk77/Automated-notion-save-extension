@@ -1,9 +1,13 @@
 {
-    "name": "Automated Notion Save",
-    "version": "1.0.0",
-    "description": "Application to save pages directly to Notion",
+    "name": "NetNook",
+    "version": "1.0.7",
+    "description": "Extension to export bookmarks directly to notion,",
     "manifest_version": 3,
     "author": "Danuk Sanujaya Udagama",
+    "icons": {
+        "16": "Assets/mainLogo.png",
+        "32": "Assets/mainLogo.png"
+    },
     "action": {
         "default_popup": "index.html",
         "default_title": "Save to Notion"
@@ -12,6 +16,10 @@
         "storage",
         "tabs"
     ],
+    "options_ui": {
+        "page": "configuration.html",
+        "open_in_tab": false
+    },
     "web_accessible_resources": [
         {
             "resources":[
