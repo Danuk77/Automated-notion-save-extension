@@ -8,6 +8,15 @@ body{
 
 #Settings{
     width: 15%;
+    transition: transform .3s;
+}
+
+#Settings:hover{
+    transform:scale(1.1);
+}
+
+#Settings.clicked{
+    transform:scale(1.3);
 }
 
 #Send{
@@ -55,9 +64,15 @@ body{
 #Submit{
     width: 60%;
     margin-bottom: 10px;
-    transition: transform .3s;
+    transition: transform .1s;
 }
 
 #Submit:hover{
-    transform:scale(1.1);
+    transform:scale(1.02);
 }
+
+#Submit.clicked{
+    transform:scale(1.04);
+}
+
+
