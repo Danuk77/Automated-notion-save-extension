@@ -21,8 +21,8 @@ chrome.storage.sync.get(["integrationKey"]).then((result) => {
 
 // TODO - add functionality when it doesnt exist
 chrome.storage.sync.get(["databaseID"]).then((result) => {
-    if(result.integrationKey){
-        databaseID = result.integrationKey;
+    if(result.databaseID){
+        databaseID = result.databaseID;
     }
 });
 
@@ -43,34 +43,36 @@ try{
 }
 
 submit.addEventListener("click", async () => {
-    try{        
-        // Retrieve the information and make a call to the backend
-        chrome.tabs.query({active: true, lastFocusedWindow: true}, async tabs => {
-            let databaseID = 'fb62e501905e400c988b713255375537';
-            let pageID = '04fb5ffc2fd142e290669caacdcd4e13';
-            // Test version (The API endpoint for testing)
-            const res = await fetch('http://127.0.0.1:5001/savetonotion-6acf8/us-central1/addDBEntry', {
-                method: 'POST',
-                body: JSON.stringify({
-                    url: urlValue,
-                    title: titleValue,
-                    icon: icon,
-                    pageID: pageID,
-                    databaseID: databaseID,
-                    description:description.value
-                })
+    try{
+        // Check if the configuration is properly set up
+        if(integrationKey == null || databaseID == null){
+            alert("Please configure the API keys from the settings menu.");
+        }else{
+            // Make call to backend
+            chrome.tabs.query({active: true, lastFocusedWindow: true}, async tabs => {
+                // Test version (The API endpoint for testing)
+                const res = await fetch('http://127.0.0.1:5001/savetonotion-6acf8/us-central1/addDBEntry', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        url: urlValue,
+                        title: titleValue,
+                        icon: icon,
+                        databaseID: databaseID,
+                        description:description.value,
+                        integrationKey:integrationKey
+                    })
+                });
+                // Production version (The API endpoint for production)
+                // const res = await fetch('https://addmessage-hfmr2rshba-uc.a.run.app', {
+                //     method: 'POST',
+                //     body: JSON.stringify({
+                //         text: "SomeURL"
+                //     })
+                // });
+
+            console.log(res);
             });
-            // Production version (The API endpoint for production)
-            // const res = await fetch('https://addmessage-hfmr2rshba-uc.a.run.app', {
-            //     method: 'POST',
-            //     body: JSON.stringify({
-            //         text: "SomeURL"
-            //     })
-            // });
-
-        console.log(res);
-        });
-
+        }
     }catch(err){
         console.log(err);
     }
@@ -95,6 +97,7 @@ settings.addEventListener("click", async function() {
         this.classList.remove("clicked");
     }, 50);
 
+    // Open the options page
     if (chrome.runtime.openOptionsPage) {
         chrome.runtime.openOptionsPage();
     } else {
