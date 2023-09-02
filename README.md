@@ -1,2 +1,4 @@
-# Automated-notion-save-extension
-A chrome extension for saving website URLs in a user's notion page.
+# NetNook
+
+
+Chrome extension for bookmarking websites and directly importing them to notion.
